@@ -17,3 +17,4 @@ get-debloated-pkgs --add-common --prefer-nano
 
 # If the application needs to be manually built that has to be done down here
 wget https://bay12games.com/dwarves/df_47_05_linux.tar.bz2
+tar -xvf df_47_05_linux.tar.bz2
