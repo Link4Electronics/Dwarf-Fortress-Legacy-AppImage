@@ -7,10 +7,8 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    glib2        \
     glu          \
     libdecor     \
-    libffi       \
     pcre2        \
     sdl12-compat \
     sdl_image    \
