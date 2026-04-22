@@ -1,0 +1,24 @@
+#!/bin/sh
+
+mkdir -p "$DATADIR"/dwarf-fortress-appimage/bin
+cd "$DATADIR"/dwarf-fortress-appimage
+
+cp "$APPDIR"/sharun    ./
+cp "$APPDIR"/.env      ./ 2>/dev/null || :
+cp "$APPDIR"/.preload  ./ 2>/dev/null || :
+
+ln -f ./sharun ./bin/dwarfort
+
+if [ ! -d ./bin/data ]; then
+	cp -r "$APPDIR"/bin/data ./bin
+fi
+
+for d in lib share shared etc; do
+	if [ -d "$APPDIR"/"$d" ]; then
+		ln -sfn "$APPDIR"/"$d"  ./"$d"
+	fi
+done
+
+# Now jump to game
+cd ./bin
+exec ./dwarfort "$@"
