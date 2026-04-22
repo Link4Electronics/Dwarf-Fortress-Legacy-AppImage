@@ -16,5 +16,9 @@ get-debloated-pkgs --add-common --prefer-nano
 #make-aur-package PACKAGENAME
 
 # If the application needs to be manually built that has to be done down here
+echo "Getting app..."
+echo "---------------------------------------------------------------"
 wget https://bay12games.com/dwarves/df_47_05_linux.tar.bz2
 tar -xvf df_47_05_linux.tar.bz2
+
+mkdir -p ./AppDir/bin
